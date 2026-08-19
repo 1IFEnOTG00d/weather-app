@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App with Map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- App Styles -->
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+
+  <!-- Fullscreen Map -->
+  <div id="map"></div>
+
+  <!-- Weather Overlay Card -->
+  <div class="card">
+    <div class="search">
+      <input type="text" id="cityInput" placeholder="Enter city name..." />
+      <button id="searchBtn">Search</button>
+      <button id="locBtn" class="loc-btn" title="Use Current Location">📍</button>
+    </div>
+    <div id="error" class="error"></div>
+    <div id="weather" class="weather-info">
+      <h2 id="cityName">--</h2>
+      <div id="temp" class="temp">--°C</div>
+      <p id="condition">--</p>
+      <div class="details">
+        <div>Humidity: <span id="humidity">--</span>%</div>
+        <div>Wind: <span id="wind">--</span> m/s</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet Library JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- App Logic JS -->
+  <script src="./script.js" defer></script>
+</body>
+</html>
