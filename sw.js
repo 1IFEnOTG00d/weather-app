@@ -6,6 +6,8 @@ self.addEventListener('activate', (e) => {
   return self.clients.claim();
 });
 
-self.addEventListener('fetch', (e) => {
-  // Empty fetch listener required for PWA installability
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    fetch(event.request).catch(() => caches.match(event.request))
+  );
 });
